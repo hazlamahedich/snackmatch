@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Nutrition Feature</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .snack-card {
+            background: white;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .nutrition-facts {
+            background: white;
+            border: 2px solid #333;
+            border-radius: 8px;
+            padding: 16px;
+            margin-top: 16px;
+        }
+        .nutrition-header {
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .nutrition-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 4px 0;
+            border-top: 1px solid #ccc;
+        }
+        .nutrition-label {
+            font-weight: bold;
+        }
+        .history-item {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .nutrition-badges {
+            display: flex;
+            gap: 8px;
+            margin-top: 8px;
+        }
+        .badge {
+            background: #e3f2fd;
+            color: #1976d2;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <h1>SnackMatch Nutrition Feature Test</h1>
+    
+    <div class="snack-card">
+        <h2>🥨 Trail Mix</h2>
+        <p>A perfect energy-boosting mix for your outdoor adventures!</p>
+        
+        <button onclick="toggleNutrition()">Show Nutrition Facts ▼</button>
+        
+        <div id="nutrition-card" class="nutrition-facts" style="display: none;">
+            <div class="nutrition-header">Nutrition Facts</div>
+            <div class="nutrition-row">
+                <span class="nutrition-label">Calories</span>
+                <span>185</span>
+            </div>
+            <div class="nutrition-row">
+                <span class="nutrition-label">Total Fat</span>
+                <span>12g</span>
+            </div>
+            <div class="nutrition-row">
+                <span class="nutrition-label">Total Carbohydrate</span>
+                <span>18g</span>
+            </div>
+            <div class="nutrition-row">
+                <span class="nutrition-label">Dietary Fiber</span>
+                <span>3g</span>
+            </div>
+            <div class="nutrition-row">
+                <span class="nutrition-label">Protein</span>
+                <span>6g</span>
+            </div>
+        </div>
+    </div>
+
+    <h3>History View Example</h3>
+    <div class="history-item">
+        <h4>🥨 Trail Mix</h4>
+        <p>A perfect energy-boosting mix for your outdoor adventures!</p>
+        <div class="nutrition-badges">
+            <span class="badge">185 cal</span>
+            <span class="badge">6g protein</span>
+        </div>
+    </div>
+
+    <script>
+        function toggleNutrition() {
+            const card = document.getElementById('nutrition-card');
+            const button = event.target;
+            if (card.style.display === 'none') {
+                card.style.display = 'block';
+                button.textContent = 'Nutrition Facts ▲';
+            } else {
+                card.style.display = 'none';
+                button.textContent = 'Show Nutrition Facts ▼';
+            }
+        }
+    </script>
+</body>
+</html>
